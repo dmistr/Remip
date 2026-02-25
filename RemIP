@@ -1,0 +1,504 @@
+import subprocess
+import sys
+import os
+import re
+import threading
+import time
+import pickle
+from pathlib import Path
+from tkinter import *
+from tkinter import ttk, messagebox, simpledialog
+import tkinter.font as tkFont
+
+# Настройки
+VERSION = "1.0.0"
+CRED_DIR = Path("C:/temp")
+CRED_DIR.mkdir(exist_ok=True)
+
+# Словарь с переводами
+translations = {
+    "ru": {
+        "title": f"Управление удаленными ПК v{VERSION}",
+        "header": "УПРАВЛЕНИЕ УДАЛЕННЫМИ КОМПЬЮТЕРАМИ",
+        "ip_label": "IP целевого ПК:",
+        "btn_shutdown_now": "1. ВЫКЛЮЧИТЬ СЕЙЧАС",
+        "btn_shutdown_timer": "2. ВЫКЛЮЧИТЬ С ТАЙМЕРОМ",
+        "btn_shutdown_text": "3. ВЫКЛЮЧИТЬ + ТЕКСТ",
+        "btn_shutdown_voice": "4. ВЫКЛЮЧИТЬ + ГОЛОС",
+        "btn_send_text": "5. ТЕКСТОВОЕ СООБЩЕНИЕ",
+        "btn_send_voice": "6. ГОЛОСОВОЕ СООБЩЕНИЕ",
+        "btn_save_cred": "7. СОХРАНИТЬ УЧЁТНЫЕ ДАННЫЕ",
+        "btn_show_saved": "8. СПИСОК СОХРАНЁННЫХ IP",
+        "btn_delete_cred": "9. УДАЛИТЬ УЧЁТНЫЕ ДАННЫЕ",
+        "btn_diag": "10. ДИАГНОСТИКА",
+        "btn_clear": "ОЧИСТИТЬ ВЫВОД",
+        "admin_error": "Нужны права администратора!",
+        "enter_timer": "Введите время в секундах:",
+        "enter_message": "Введите текст:",
+        "enter_voice": "Введите текст для озвучки:",
+        "checking": "Проверка доступности {}...",
+        "online": "Компьютер {} доступен",
+        "offline": "Компьютер {} не отвечает",
+        "executing": "Выполнение команды на {}...",
+        "success": "Команда выполнена успешно",
+        "error": "Ошибка выполнения. Проверьте доступность {}",
+        "text_sent": "Текстовое сообщение отправлено",
+        "voice_sent": "Голосовое сообщение отправлено",
+        "text_not_sent": "Текстовое сообщение НЕ отправлено",
+        "voice_not_sent": "Голосовое сообщение НЕ отправлено",
+        "diag_header": "ДИАГНОСТИКА ПОДКЛЮЧЕНИЯ",
+        "diag_ping": "ПРОВЕРКА СВЯЗИ:",
+        "diag_winrm": "ПРОВЕРКА WINRM:",
+        "diag_port": "ПРОВЕРКА ПОРТА 5985:",
+        "port_open": "Порт 5985 открыт",
+        "port_closed": "Порт 5985 закрыт",
+        "winrm_ok": "WinRM доступен",
+        "winrm_error": "WinRM недоступен",
+        "diag_complete": "ДИАГНОСТИКА ЗАВЕРШЕНА",
+        "pc_unreachable": "Управляемый компьютер не отвечает",
+        "saved_creds": "СОХРАНЁННЫЕ УЧЁТНЫЕ ДАННЫЕ",
+        "no_saved": "Нет сохранённых учётных данных",
+        "cred_saved": "Учётные данные сохранены",
+        "cred_save_error": "Ошибка сохранения учётных данных",
+        "cred_deleted": "Учётные данные для {} удалены",
+        "cred_not_found": "Файл {} не найден",
+        "no_credentials": "Учётные данные не найдены. Сначала сохраните их (пункт 7)",
+        "add_trusted": "Добавление {} в TrustedHosts...",
+        "already_trusted": "{} уже в TrustedHosts",
+        "trusted_updated": "TrustedHosts обновлен: {}",
+        "trusted_error": "Ошибка обновления TrustedHosts",
+        "language": "Язык:",
+        "russian": "Русский",
+        "english": "English",
+    },
+    "en": {
+        "title": f"Remote PC Management v{VERSION}",
+        "header": "REMOTE COMPUTER MANAGEMENT",
+        "ip_label": "Target PC IP:",
+        "btn_shutdown_now": "1. SHUTDOWN NOW",
+        "btn_shutdown_timer": "2. SHUTDOWN WITH TIMER",
+        "btn_shutdown_text": "3. SHUTDOWN + TEXT",
+        "btn_shutdown_voice": "4. SHUTDOWN + VOICE",
+        "btn_send_text": "5. TEXT MESSAGE",
+        "btn_send_voice": "6. VOICE MESSAGE",
+        "btn_save_cred": "7. SAVE CREDENTIALS",
+        "btn_show_saved": "8. SHOW SAVED IPs",
+        "btn_delete_cred": "9. DELETE CREDENTIALS",
+        "btn_diag": "10. DIAGNOSTICS",
+        "btn_clear": "CLEAR OUTPUT",
+        "admin_error": "Administrator rights required!",
+        "enter_timer": "Enter time in seconds:",
+        "enter_message": "Enter text:",
+        "enter_voice": "Enter text for voice:",
+        "checking": "Checking {} availability...",
+        "online": "Computer {} is online",
+        "offline": "Computer {} is offline",
+        "executing": "Executing command on {}...",
+        "success": "Command executed successfully",
+        "error": "Execution error. Check {} availability",
+        "text_sent": "Text message sent",
+        "voice_sent": "Voice message sent",
+        "text_not_sent": "Text message NOT sent",
+        "voice_not_sent": "Voice message NOT sent",
+        "diag_header": "CONNECTION DIAGNOSTICS",
+        "diag_ping": "PING TEST:",
+        "diag_winrm": "WINRM TEST:",
+        "diag_port": "PORT 5985 TEST:",
+        "port_open": "Port 5985 is open",
+        "port_closed": "Port 5985 is closed",
+        "winrm_ok": "WinRM is available",
+        "winrm_error": "WinRM is unavailable",
+        "diag_complete": "DIAGNOSTICS COMPLETE",
+        "pc_unreachable": "Remote computer is unreachable",
+        "saved_creds": "SAVED CREDENTIALS",
+        "no_saved": "No saved credentials",
+        "cred_saved": "Credentials saved",
+        "cred_save_error": "Error saving credentials",
+        "cred_deleted": "Credentials for {} deleted",
+        "cred_not_found": "File {} not found",
+        "no_credentials": "Credentials not found. Save them first (item 7)",
+        "add_trusted": "Adding {} to TrustedHosts...",
+        "already_trusted": "{} already in TrustedHosts",
+        "trusted_updated": "TrustedHosts updated: {}",
+        "trusted_error": "TrustedHosts update error",
+        "language": "Language:",
+        "russian": "Russian",
+        "english": "English",
+    }
+}
+
+class RemoteControlApp:
+    def __init__(self, root):
+        self.root = root
+        self.current_lang = "ru"
+        self.ip_var = StringVar(value="192.168.1.166")
+        
+        self.setup_ui()
+        self.update_language()
+        
+    def setup_ui(self):
+        self.root.geometry("820x700")
+        self.root.resizable(False, False)
+        self.root.configure(bg="#2d2d2d")
+        
+        # Заголовок
+        self.header = Label(self.root, font=("Arial", 14, "bold"), fg="#00ff00", bg="#2d2d2d")
+        self.header.place(x=20, y=15)
+        
+        # Панель IP и языка
+        ip_frame = Frame(self.root, bg="#2d2d2d")
+        ip_frame.place(x=20, y=55, width=700, height=35)
+        
+        self.ip_label = Label(ip_frame, fg="white", bg="#2d2d2d")
+        self.ip_label.place(x=0, y=8)
+        
+        self.ip_entry = Entry(ip_frame, textvariable=self.ip_var, bg="#555555", fg="#00ff00", bd=0)
+        self.ip_entry.place(x=105, y=5, width=150, height=20)
+        
+        self.lang_label = Label(ip_frame, fg="white", bg="#2d2d2d")
+        self.lang_label.place(x=500, y=8)
+        
+        self.lang_combo = ttk.Combobox(ip_frame, values=["Русский", "English"], state="readonly")
+        self.lang_combo.place(x=565, y=5, width=100, height=23)
+        self.lang_combo.current(0)
+        self.lang_combo.bind('<<ComboboxSelected>>', self.on_language_change)
+        
+        # Кнопки
+        btn_font = tkFont.Font(family="Arial", size=9, weight="bold")
+        btn_y = 100
+        
+        self.btn_shutdown_now = Button(self.root, font=btn_font, bg="#d73a3a", fg="white", bd=0, command=self.shutdown_now)
+        self.btn_shutdown_now.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_shutdown_timer = Button(self.root, font=btn_font, bg="#d73a3a", fg="white", bd=0, command=self.shutdown_timer)
+        self.btn_shutdown_timer.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_shutdown_text = Button(self.root, font=btn_font, bg="#d73a3a", fg="white", bd=0, command=self.shutdown_text)
+        self.btn_shutdown_text.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_shutdown_voice = Button(self.root, font=btn_font, bg="#d73a3a", fg="white", bd=0, command=self.shutdown_voice)
+        self.btn_shutdown_voice.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 45
+        
+        self.btn_send_text = Button(self.root, font=btn_font, bg="#0078d7", fg="white", bd=0, command=self.send_text)
+        self.btn_send_text.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_send_voice = Button(self.root, font=btn_font, bg="#0078d7", fg="white", bd=0, command=self.send_voice)
+        self.btn_send_voice.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 45
+        
+        self.btn_save_cred = Button(self.root, font=btn_font, bg="#00aa00", fg="white", bd=0, command=self.save_credentials)
+        self.btn_save_cred.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_show_saved = Button(self.root, font=btn_font, bg="#555555", fg="white", bd=0, command=self.show_saved_ips)
+        self.btn_show_saved.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_delete_cred = Button(self.root, font=btn_font, bg="#ff5555", fg="white", bd=0, command=self.delete_credentials)
+        self.btn_delete_cred.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 45
+        
+        self.btn_diag = Button(self.root, font=btn_font, bg="#0078d7", fg="white", bd=0, command=self.diagnostics)
+        self.btn_diag.place(x=20, y=btn_y, width=230, height=30)
+        btn_y += 35
+        
+        self.btn_clear = Button(self.root, font=btn_font, bg="#555555", fg="white", bd=0, command=self.clear_output)
+        self.btn_clear.place(x=20, y=btn_y, width=230, height=30)
+        
+        # Прогресс-бар
+        self.progress = ttk.Progressbar(self.root, length=230, mode='determinate')
+        self.progress.place(x=20, y=550)
+        
+        # Текстовое поле для вывода
+        self.output = Text(self.root, bg="#1e1e1e", fg="#ffffff", font=("Consolas", 10), wrap="word", bd=0)
+        self.output.place(x=270, y=100, width=510, height=500)
+        
+        # Скроллбар
+        scrollbar = Scrollbar(self.root, command=self.output.yview)
+        scrollbar.place(x=780, y=100, height=500)
+        self.output.config(yscrollcommand=scrollbar.set)
+        
+        # Теги для цветов
+        self.output.tag_configure("header", foreground="#00ffff")
+        self.output.tag_configure("subheader", foreground="#ffaa00")
+        self.output.tag_configure("ok", foreground="#00ff00")
+        self.output.tag_configure("error", foreground="#ff5555")
+        self.output.tag_configure("warning", foreground="#ffaa00")
+        self.output.tag_configure("cmd", foreground="#ffff00")
+        self.output.tag_configure("result", foreground="#ffffff")
+        
+    def t(self, key, param=None):
+        text = translations[self.current_lang].get(key, key)
+        if param is not None:
+            return text.format(param)
+        return text
+        
+    def on_language_change(self, event):
+        self.current_lang = "ru" if self.lang_combo.get() == "Русский" else "en"
+        self.update_language()
+        
+    def update_language(self):
+        self.root.title(self.t("title"))
+        self.header.config(text=self.t("header"))
+        self.ip_label.config(text=self.t("ip_label"))
+        self.lang_label.config(text=self.t("language"))
+        self.btn_shutdown_now.config(text=self.t("btn_shutdown_now"))
+        self.btn_shutdown_timer.config(text=self.t("btn_shutdown_timer"))
+        self.btn_shutdown_text.config(text=self.t("btn_shutdown_text"))
+        self.btn_shutdown_voice.config(text=self.t("btn_shutdown_voice"))
+        self.btn_send_text.config(text=self.t("btn_send_text"))
+        self.btn_send_voice.config(text=self.t("btn_send_voice"))
+        self.btn_save_cred.config(text=self.t("btn_save_cred"))
+        self.btn_show_saved.config(text=self.t("btn_show_saved"))
+        self.btn_delete_cred.config(text=self.t("btn_delete_cred"))
+        self.btn_diag.config(text=self.t("btn_diag"))
+        self.btn_clear.config(text=self.t("btn_clear"))
+        
+    def write_output(self, text, tag=None):
+        self.output.insert(END, text + "\n", tag)
+        self.output.see(END)
+        self.root.update()
+        
+    def update_progress(self, value):
+        self.progress['value'] = value
+        self.root.update()
+        
+    def run_command(self, cmd):
+        try:
+            result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+            return result.stdout.strip() or result.stderr.strip()
+        except:
+            return None
+            
+    def test_ping(self, ip):
+        result = self.run_command(f"ping -n 1 {ip} | find \"TTL=\"")
+        return bool(result)
+        
+    def get_cred_file(self, ip):
+        return CRED_DIR / f"remote_cred_{ip.replace('.', '_')}.xml"
+        
+    def add_trusted_host(self, ip):
+        self.write_output(f"  → {self.t('add_trusted', ip)}", "cmd")
+        
+        # Получаем текущие TrustedHosts
+        current = self.run_command("winrm get winrm/config/client | findstr TrustedHosts")
+        
+        if current and "TrustedHosts" in current:
+            current_hosts = current.split("=")[-1].strip()
+            if ip in current_hosts:
+                self.write_output(f"  {self.t('already_trusted', ip)}", "ok")
+                return True
+            new_hosts = f"{current_hosts},{ip}"
+        else:
+            new_hosts = ip
+            
+        # Добавляем IP
+        result = self.run_command(f'winrm set winrm/config/client @{{TrustedHosts="{new_hosts}"}}')
+        if result is not None:
+            self.write_output(f"  {self.t('trusted_updated', new_hosts)}", "ok")
+            return True
+        else:
+            self.write_output(f"  {self.t('trusted_error')}", "error")
+            return False
+            
+    def invoke_remote_command(self, script_block, success_msg=None, fail_msg=None):
+        ip = self.ip_var.get()
+        cred_file = self.get_cred_file(ip)
+        
+        self.write_output(f"  → {self.t('checking', ip)}", "cmd")
+        
+        if not self.test_ping(ip):
+            self.write_output(f"  {self.t('offline', ip)}", "error")
+            if fail_msg:
+                self.write_output(f"  {fail_msg}", "error")
+            return False
+            
+        self.write_output(f"  {self.t('online', ip)}", "ok")
+        self.update_progress(30)
+        
+        if not cred_file.exists():
+            self.write_output(f"  {self.t('no_credentials')}", "warning")
+            return False
+            
+        self.add_trusted_host(ip)
+        self.write_output(f"  → {self.t('executing', ip)}", "cmd")
+        
+        # Создаём временный PowerShell скрипт
+        temp_script = CRED_DIR / "temp_script.ps1"
+        script_content = f"""
+$cred = Import-Clixml -Path '{cred_file}'
+Invoke-Command -ComputerName {ip} -Credential $cred -ScriptBlock {{
+    {script_block}
+}} -ErrorAction Stop
+"""
+        temp_script.write_text(script_content, encoding='utf-8')
+        
+        result = self.run_command(f'powershell -ExecutionPolicy Bypass -File "{temp_script}"')
+        success = result is not None and "error" not in result.lower()
+        
+        temp_script.unlink(missing_ok=True)
+        self.update_progress(100)
+        
+        if success:
+            self.write_output(f"  {self.t('success')}", "ok")
+            if success_msg:
+                self.write_output(f"  {success_msg}", "ok")
+            return True
+        else:
+            self.write_output(f"  {self.t('error', ip)}", "error")
+            if result:
+                self.write_output(f"  {result}", "error")
+            if fail_msg:
+                self.write_output(f"  {fail_msg}", "error")
+            return False
+            
+    def shutdown_now(self):
+        threading.Thread(target=lambda: self.invoke_remote_command("shutdown /s /f /t 0")).start()
+        
+    def shutdown_timer(self):
+        timer = simpledialog.askstring(self.t("shutdown_timer"), self.t("enter_timer"), initialvalue="30")
+        if timer and timer.isdigit():
+            threading.Thread(target=lambda: self.invoke_remote_command(f"shutdown /s /f /t {timer}")).start()
+            
+    def shutdown_text(self):
+        timer = simpledialog.askstring(self.t("shutdown_timer"), self.t("enter_timer"), initialvalue="30")
+        if timer and timer.isdigit():
+            message = simpledialog.askstring(self.t("shutdown_text"), self.t("enter_message"), initialvalue="Компьютер выключается")
+            if message:
+                cmd = f"msg * /TIME:15 '{message}'; shutdown /s /f /t {timer}"
+                threading.Thread(target=lambda: self.invoke_remote_command(cmd)).start()
+                
+    def shutdown_voice(self):
+        timer = simpledialog.askstring(self.t("shutdown_voice"), self.t("enter_timer"), initialvalue="30")
+        if timer and timer.isdigit():
+            message = simpledialog.askstring(self.t("shutdown_voice"), self.t("enter_voice"), initialvalue="Компьютер выключается")
+            if message:
+                cmd = f"""
+Add-Type -AssemblyName System.Speech
+$synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
+$synth.Speak('{message}')
+shutdown /s /f /t {timer}
+"""
+                threading.Thread(target=lambda: self.invoke_remote_command(cmd)).start()
+                
+    def send_text(self):
+        message = simpledialog.askstring(self.t("send_text"), self.t("enter_message"), initialvalue="Привет!")
+        if message:
+            def task():
+                success = self.invoke_remote_command(f"msg * /TIME:30 '{message}'")
+                if not success:
+                    self.write_output(f"  {self.t('text_not_sent')}", "error")
+            threading.Thread(target=task).start()
+            
+    def send_voice(self):
+        message = simpledialog.askstring(self.t("send_voice"), self.t("enter_voice"), initialvalue="Привет!")
+        if message:
+            def task():
+                cmd = f"""
+Add-Type -AssemblyName System.Speech
+$synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
+$synth.Speak('{message}')
+"""
+                success = self.invoke_remote_command(cmd)
+                if not success:
+                    self.write_output(f"  {self.t('voice_not_sent')}", "error")
+            threading.Thread(target=task).start()
+            
+    def save_credentials(self):
+        ip = self.ip_var.get()
+        cred_file = self.get_cred_file(ip)
+        
+        self.write_output(f"  → {self.t('executing', ip)}", "cmd")
+        
+        try:
+            # Запускаем PowerShell для получения учётных данных
+            ps_script = f"""
+$cred = Get-Credential -Message "Введите учётные данные для {ip}"
+$cred | Export-Clixml -Path '{cred_file}'
+"""
+            result = self.run_command(f'powershell -Command "{ps_script}"')
+            if cred_file.exists():
+                self.write_output(f"  {self.t('cred_saved')}", "ok")
+            else:
+                self.write_output(f"  {self.t('cred_save_error')}", "error")
+        except:
+            self.write_output(f"  {self.t('cred_save_error')}", "error")
+            
+    def show_saved_ips(self):
+        self.write_output("", "")
+        self.write_output(self.t("saved_creds"), "header")
+        
+        files = list(CRED_DIR.glob("remote_cred_*.xml"))
+        if not files:
+            self.write_output(f"  {self.t('no_saved')}", "warning")
+        else:
+            for file in files:
+                ip = file.stem.replace("remote_cred_", "").replace("_", ".")
+                self.write_output(f"  {ip}", "result")
+                
+    def delete_credentials(self):
+        ip = self.ip_var.get()
+        cred_file = self.get_cred_file(ip)
+        
+        if cred_file.exists():
+            cred_file.unlink()
+            self.write_output(f"  {self.t('cred_deleted', ip)}", "ok")
+        else:
+            self.write_output(f"  {self.t('cred_not_found', str(cred_file))}", "warning")
+            
+    def diagnostics(self):
+        ip = self.ip_var.get()
+        pc_online = self.test_ping(ip)
+        
+        self.write_output("", "")
+        self.write_output(self.t("diag_header"), "header")
+        self.update_progress(10)
+        
+        self.write_output(self.t("diag_ping"), "subheader")
+        if pc_online:
+            self.write_output(f"  {self.t('online', ip)}", "ok")
+        else:
+            self.write_output(f"  {self.t('offline', ip)}", "error")
+            self.write_output(f"  {self.t('pc_unreachable')}", "warning")
+        self.update_progress(30)
+        
+        self.write_output(self.t("diag_winrm"), "subheader")
+        if pc_online:
+            result = self.run_command(f'powershell -Command "Test-WSMan {ip}"')
+            if result and "error" not in result.lower():
+                self.write_output(f"  {self.t('winrm_ok')}", "ok")
+            else:
+                self.write_output(f"  {self.t('winrm_error')}", "error")
+        else:
+            self.write_output(f"  {self.t('winrm_error')}", "error")
+        self.update_progress(60)
+        
+        self.write_output(self.t("diag_port"), "subheader")
+        if pc_online:
+            result = self.run_command(f'powershell -Command "Test-NetConnection -ComputerName {ip} -Port 5985 | Select-Object -ExpandProperty TcpTestSucceeded"')
+            if result and "True" in result:
+                self.write_output(f"  {self.t('port_open')}", "ok")
+            else:
+                self.write_output(f"  {self.t('port_closed')}", "error")
+        else:
+            self.write_output(f"  {self.t('port_closed')}", "error")
+        self.update_progress(90)
+        
+        self.write_output(self.t("diag_complete"), "ok")
+        self.update_progress(100)
+        time.sleep(1)
+        self.update_progress(0)
+        
+    def clear_output(self):
+        self.output.delete(1.0, END)
+        self.update_progress(0)
+
+if __name__ == "__main__":
+    root = Tk()
+    app = RemoteControlApp(root)
+    root.mainloop()
