@@ -2,7 +2,7 @@
 
 [![Windows](https://img.shields.io/badge/Platform-Windows-blue)](https://github.com/)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green)](https://github.com/)
-[![License](https://img.shields.io/badge/License-Free-orange)]
+![License](https://img.shields.io/badge/License-Free-orange)
 
 **RemIP** - это комплекс из двух программ для удаленного управления компьютерами в локальной сети:
 
