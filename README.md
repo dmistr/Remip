@@ -2,6 +2,7 @@
 
 ![Windows](https://img.shields.io/badge/Platform-Windows-blue)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green)
+![Python](https://img.shields.io/badge/PowerShell-5.1+-green)
 ![License](https://img.shields.io/badge/License-Free-orange)
 
 **RemIP** – A Universal Assistant for Remote Computer Management
