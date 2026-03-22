@@ -1,5 +1,3 @@
-# RemIP - Remote IP Management
-
 ![Windows](https://img.shields.io/badge/Platform-Windows-blue)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green)
 ![Python](https://img.shields.io/badge/Python-3.14-green)
