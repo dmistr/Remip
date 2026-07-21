@@ -110,7 +110,7 @@
 | **PowerShell** | 5.1 | 5.1+ |
 | **.NET Framework** | 4.8 | 4.8+ |
 | **GPU (для стрима)** | DirectX 11 | NVIDIA GTX 10xx+ / AMD RX 5xx+ |
-| **Сеть** | 100 Мбит/с | 1 Гбит/с |
+| **Сеть** | 10 Мбит/с | 100 Мбит/с |
 
 ---
 
@@ -235,7 +235,7 @@
 - Анимация разворачивания из текущего окна на весь экран
 - Панель с FPS и трафиком в реальном времени
 - **Горячие клавиши:**
-  - `Esc` — выход (с анимацией сворачивания)
+  - `Esc` — выход
   - `F` или `0` — Fit-to-Screen
   - `Пробел` — 100% зум
   - `+/-` — зум
@@ -611,7 +611,7 @@
 - Использует Win32 API `SendInput` для эмуляции ввода
 - В режиме Direct: `SetCursorPos` для перемещения системного курсора
 - В режиме Hidden: только `SendInput` без визуального отклика
-- При запуске временно отключает UAC (ConsentPromptBehaviorAdmin=0, PromptOnSecureDesktop=0)
+- При запуске временно отключает UAC
 - При остановке или обрыве соединения восстанавливает UAC
 - Keep-alive: пинг каждые 5 секунд, таймаут отключения 15 секунд
 
@@ -646,7 +646,7 @@
 ### ОБРАТНАЯ СВЯЗЬ
 
 
-В окне «О программе» (кнопка `?`) нажмите **📤 Обратная связь**. Опишите проблему, укажите email (опционально). Программа автоматически прикрепит системную информацию и последние строки лога. Отправка через защищённый канал `ntfy.sh`.
+В окне «О программе» (кнопка `?`) нажмите **📤 Обратная связь**. Опишите проблему, укажите email (опционально). Программа автоматически прикрепит системную информацию и последние строки лога. Отправка через защищённый канал.
 
 ---
 
@@ -757,9 +757,7 @@ MIT License. По всем вопросам: **dmistr9999@gmail.com**
 | **PowerShell** | 5.1 | 5.1+ |
 | **.NET Framework** | 4.8 | 4.8+ |
 | **GPU (for streaming)** | DirectX 11 | NVIDIA GTX 10xx+ / AMD RX 5xx+ |
-| **Network** | 100 Mbps | 1 Gbps (for H.264 stream) |
-| **Python (for development)** | 3.14+ | 3.14+ |
-| **PyQt (for development)** | 6.0+ | 6.11+ |
+| **Network** | 10 Mbps | 100 Mbps |
 
 ---
 
@@ -896,7 +894,7 @@ The central control element. The "AGENT" button shows current state by color:
   - 🟢 Green — network free, increasing quality and bitrate
   - 🟡 Yellow — parameter stabilization
   - 🔴 Red — reducing bitrate, quality, and FPS
-- **Screenshot fallback:** when H.264 streaming is impossible, automatically switches to periodic screenshots (4 FPS)
+- **Screenshot fallback:** when H.264 streaming is impossible, automatically switches to MJPEG (temporarily unavailable)
 
 #### PowerShell Terminal
 
