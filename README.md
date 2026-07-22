@@ -837,7 +837,7 @@ The central control element. The "AGENT" button shows current state by color:
 - **LIVE Mode:** toggle starts continuous screen streaming
 - **🎮 Control:** launches fullscreen mode with Phantom Input
 
-**Fullscreen Mode (FullscreenScreenshotDialog):**
+**Fullscreen Mode:**
 - Expand animation from current window to full screen
 - FPS and traffic panel in real time
 - **Hotkeys:**
