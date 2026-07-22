@@ -263,7 +263,7 @@
 **Архитектура:** агент запускает процесс PowerShell с перенаправленными потоками, вывод передаётся через выделенный порт 8081.
 
 **Возможности:**
-- **Автодополнение** — более 2000 команд PowerShell и их параметров. Две фазы: ввод команды → список подходящих; после пробела → список параметров. Загружается из внешнего файла `powershell_commands.txt`
+- **Автодополнение** — более 2000 команд PowerShell и их параметров. Две фазы: ввод команды → список подходящих; после пробела → список параметров.
 - **Валидатор многострочного ввода** — автоматически преобразует многострочные скрипты в однострочный формат: сжимает here-strings, вырезает комментарии, заменяет переносы строк на `;`
 - **Умный декодер кодировок** — автоопределение cp1251/cp866/UTF-8 по наличию псевдографики и подсчёту кириллических символов
 - **История команд** — ↑↓ для навигации
@@ -903,7 +903,7 @@ Interactive terminal with streaming output. Launched via the "TERMINAL" button i
 **Architecture:** the agent starts a PowerShell process with redirected streams; output is transmitted via dedicated port 8081.
 
 **Features:**
-- **Autocomplete** — 2000+ PowerShell commands and their parameters. Two phases: typing a command → list of matches; after space → parameter list. Loaded from external `powershell_commands.txt` file
+- **Autocomplete** — 2000+ PowerShell commands and their parameters. Two phases: typing a command → list of matches; after space → parameter list.
 - **Multiline Input Validator** — automatically converts multiline scripts to single-line format: compresses here-strings, removes comments, replaces line breaks with `;`
 - **Smart Encoding Decoder** — auto-detection of cp1251/cp866/UTF-8 by box-drawing characters and Cyrillic character count
 - **Command History** — ↑↓ for navigation
