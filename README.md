@@ -1098,7 +1098,7 @@ Every 30 seconds, checks the online status of all devices. Updates ✅/❌ icons
 
 ### SETTINGS WINDOW
 
-Opened via the ⚙️ button in the top panel.
+Opened via the ⚙️ button in the top panel
 
 | Group | Setting | Values | Description |
 |-------|---------|--------|-------------|
