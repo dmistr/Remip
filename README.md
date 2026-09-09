@@ -7,7 +7,7 @@
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
-  RemIP — Remote IP Control
+  REMIP — Remote IP Control
 </h1>
 
 <p align="center">
