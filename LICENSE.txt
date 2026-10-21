@@ -1,0 +1,231 @@
+Remip — Universal Remote IP Control Tool
+Copyright (c) 2026 dmistr
+All rights reserved except as expressly granted below.
+
+================================================================================
+ENGLISH
+================================================================================
+
+1. GRANT OF LICENSE (PERSONAL, NON-COMMERCIAL USE)
+
+Subject to the terms of this License, the Author hereby grants to any natural
+person a worldwide, royalty-free, non-exclusive, non-transferable, revocable
+license to:
+
+  (a) install and use the compiled binary version of the Software ("Software")
+      solely for personal, non-commercial purposes;
+  (b) make a reasonable number of backup copies of the Software for personal
+      use.
+
+"Personal, non-commercial use" means use by a natural person for private
+purposes, outside of any business, commercial, or revenue-generating activity.
+
+2. RESTRICTIONS
+
+You may NOT, without prior written permission from the Author:
+
+  (a) use the Software for any commercial purpose, including but not limited to
+      internal business use, provision of paid services, integration into a
+      commercial product, or any activity that generates revenue;
+  (b) sell, resell, rent, lease, sublicense, distribute, or otherwise transfer
+      the Software, in whole or in part;
+  (c) modify, alter, adapt, translate, or create derivative works of the
+      Software;
+  (d) decompile, disassemble, reverse-engineer, or otherwise attempt to derive
+      the source code of the Software, except to the extent permitted by
+      applicable mandatory law;
+  (e) remove, obscure, or alter any copyright, trademark, or other proprietary
+      notices contained in the Software;
+  (f) publish, disclose, or redistribute the source code of the Software.
+
+3. COMMERCIAL LICENSING
+
+Any legal entity (including but not limited to companies, sole proprietors,
+non-profit organizations acting in a commercial capacity) and any natural
+person acting for commercial gain must obtain an express written commercial
+license from the Author before using the Software.
+
+To request a commercial license, contact: dmistr9999@gmail.com
+
+4. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. THE AUTHOR DOES
+NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE OR UNINTERRUPTED.
+
+5. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION;
+PERSONAL INJURY; PROPERTY DAMAGE) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF OR INABILITY TO USE THE
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+6. USER RESPONSIBILITY AND INDEMNIFICATION
+
+The User acknowledges and agrees that:
+
+  (a) the User is solely responsible for any and all actions performed using
+      the Software, including but not limited to actions on remote computers;
+  (b) the User shall use the Software only in compliance with all applicable
+      local, national, and international laws and regulations;
+  (c) the User shall not use the Software for any illegal, malicious,
+      unauthorized, or harmful purpose, including but not limited to
+      unauthorized access to computer systems, data exfiltration, malware
+      distribution, cyberattacks, or any other activity prohibited by law;
+  (d) the User shall indemnify, defend, and hold harmless the Author from and
+      against any and all claims, damages, losses, liabilities, costs, and
+      expenses (including reasonable attorneys' fees) arising out of or
+      related to the User's use of the Software or breach of this License.
+
+7. THIRD-PARTY COMPONENTS
+
+The Software incorporates third-party components, including PyQt6, which is
+licensed under the GNU General Public License v3.0 (GPL-3.0). The GPL-3.0
+terms applicable to those components are not superseded by this License. The
+Author's proprietary license applies solely to original code created by the
+Author. Users who require a proprietary-licensed build of the Software should
+contact the Author.
+
+8. TERMINATION
+
+This License is effective until terminated. Your rights under this License will
+terminate automatically, without notice, if you breach any of its terms. Upon
+termination, you must cease all use of the Software and destroy all copies.
+
+9. GOVERNING LAW
+
+This License shall be governed by the laws of the Russian Federation, without
+regard to its conflict-of-law provisions. Any dispute arising out of or in
+connection with this License shall be subject to the exclusive jurisdiction of
+the courts of the Russian Federation.
+
+10. CONTACT
+
+Author: dmistr
+Email:  dmistr9999@gmail.com
+GitHub: https://github.com/dmistr/Remip
+
+================================================================================
+РУССКИЙ
+================================================================================
+
+1. ПРЕДОСТАВЛЕНИЕ ЛИЦЕНЗИИ (ЛИЧНОЕ, НЕКОММЕРЧЕСКОЕ ИСПОЛЬЗОВАНИЕ)
+
+На условиях настоящей Лицензии Автор предоставляет любому физическому лицу
+всемирную, безвозмездную, неисключительную, непередаваемую, отзывную лицензию:
+
+  (а) устанавливать и использовать скомпилированную бинарную версию
+      Программного обеспечения («ПО») исключительно в личных, некоммерческих
+      целях;
+  (б) создавать разумное количество резервных копий ПО для личного
+      использования.
+
+«Личное, некоммерческое использование» означает использование физическим
+лицом в частных целях, вне рамок какой-либо предпринимательской,
+коммерческой или приносящей доход деятельности.
+
+2. ОГРАНИЧЕНИЯ
+
+Без предварительного письменного разрешения Автора ЗАПРЕЩАЕТСЯ:
+
+  (а) использовать ПО в любых коммерческих целях, включая, но не
+      ограничиваясь: внутреннее использование в организации, оказание платных
+      услуг, включение в коммерческий продукт или любую деятельность,
+      приносящую доход;
+  (б) продавать, перепродавать, сдавать в аренду, сублицензировать,
+      распространять или иным образом передавать ПО полностью или частично;
+  (в) изменять, модифицировать, адаптировать, переводить или создавать
+      производные произведения на основе ПО;
+  (г) декомпилировать, дизассемблировать, подвергать обратному
+      проектированию или иным образом пытаться получить исходный код ПО,
+      кроме случаев, прямо разрешённых применимым императивным
+      законодательством;
+  (д) удалять, скрывать или изменять любые уведомления об авторских правах,
+      товарных знаках или иные уведомления о правах собственности,
+      содержащиеся в ПО;
+  (е) публиковать, раскрывать или распространять исходный код ПО.
+
+3. КОММЕРЧЕСКОЕ ЛИЦЕНЗИРОВАНИЕ
+
+Любое юридическое лицо (включая, но не ограничиваясь: компании,
+индивидуальных предпринимателей, некоммерческие организации, действующие в
+коммерческом качестве) и любое физическое лицо, действующее с целью
+извлечения коммерческой выгоды, обязаны получить явное письменное
+коммерческое разрешение Автора до использования ПО.
+
+Для получения коммерческой лицензии обращайтесь: dmistr9999@gmail.com
+
+4. ОТСУТСТВИЕ ГАРАНТИЙ
+
+ПО ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ» (AS IS), БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНЫХ ИЛИ
+ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАЯСЬ, ГАРАНТИИ
+ТОВАРНОЙ ПРИГОДНОСТИ, ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ, ПРАВА
+СОБСТВЕННОСТИ И НЕНАРУШЕНИЯ ПРАВ. АВТОР НЕ ГАРАНТИРУЕТ, ЧТО ПО БУДЕТ
+РАБОТАТЬ БЕЗОШИБОЧНО ИЛИ БЕСПЕРЕБОЙНО.
+
+5. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ
+
+В МАКСИМАЛЬНОЙ СТЕПЕНИ, ДОПУСКАЕМОЙ ПРИМЕНИМЫМ ЗАКОНОДАТЕЛЬСТВОМ, АВТОР
+НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ НЕ НЕСЁТ ОТВЕТСТВЕННОСТИ ЗА ЛЮБЫЕ ПРЯМЫЕ,
+КОСВЕННЫЕ, СЛУЧАЙНЫЕ, ОСОБЫЕ, ШТРАФНЫЕ ИЛИ ПОСЛЕДУЮЩИЕ УБЫТКИ (ВКЛЮЧАЯ,
+НО НЕ ОГРАНИЧИВАЯСЬ: ПРИОБРЕТЕНИЕ ЗАМЕНЯЮЩИХ ТОВАРОВ ИЛИ УСЛУГ; ПОТЕРЮ
+ДАННЫХ ИЛИ ПРИБЫЛИ; ПРЕРЫВАНИЕ ДЕЯТЕЛЬНОСТИ; ПРИЧИНЕНИЕ ВРЕДА ЛИЧНОСТИ
+ИЛИ ИМУЩЕСТВУ), ВОЗНИКШИЕ ЛЮБЫМ ОБРАЗОМ ИЗ ИСПОЛЬЗОВАНИЯ ИЛИ
+НЕВОЗМОЖНОСТИ ИСПОЛЬЗОВАНИЯ ПО, ДАЖЕ ЕСЛИ АВТОР БЫЛ УВЕДОМЛЁН О
+ВОЗМОЖНОСТИ ТАКИХ УБЫТКОВ.
+
+6. ОТВЕТСТВЕННОСТЬ ПОЛЬЗОВАТЕЛЯ И ОСВОБОЖДЕНИЕ ОТ ОТВЕТСТВЕННОСТИ
+
+Пользователь признаёт и соглашается, что:
+
+  (а) Пользователь несёт полную и единоличную ответственность за все
+      действия, совершённые с использованием ПО, включая, но не ограничиваясь,
+      действия на удалённых компьютерах;
+  (б) Пользователь обязуется использовать ПО только в соответствии со всеми
+      применимыми местными, национальными и международными законами и
+      нормативными актами;
+  (в) Пользователь обязуется не использовать ПО в любых незаконных,
+      вредоносных, несанкционированных или опасных целях, включая, но не
+      ограничиваясь: несанкционированный доступ к компьютерным системам,
+      хищение данных, распространение вредоносного ПО, кибератаки или любую
+      иную деятельность, запрещённую законом;
+  (г) Пользователь обязуется возместить Автору убытки, защищать и
+      ограждать Автора от любых претензий, убытков, потерь, обязательств,
+      издержек и расходов (включая разумные расходы на юридические услуги),
+      возникших в связи с использованием Пользователем ПО или нарушением
+      настоящей Лицензии.
+
+7. КОМПОНЕНТЫ ТРЕТЬИХ СТОРОН
+
+ПО включает компоненты третьих сторон, в том числе PyQt6, распространяемый
+под лицензией GNU General Public License v3.0 (GPL-3.0). Условия GPL-3.0,
+применимые к этим компонентам, не отменяются настоящей Лицензией.
+Проприетарная лицензия Автора распространяется исключительно на
+оригинальный код, созданный Автором. Пользователи, которым требуется
+проприетарная сборка ПО, должны связаться с Автором.
+
+8. ПРЕКРАЩЕНИЕ ДЕЙСТВИЯ
+
+Настоящая Лицензия действует до момента прекращения. Права Пользователя по
+настоящей Лицензии прекращаются автоматически без уведомления в случае
+нарушения любого из её условий. При прекращении действия Лицензии
+Пользователь обязан прекратить любое использование ПО и уничтожить все его
+копии.
+
+9. ПРИМЕНИМОЕ ПРАВО
+
+Настоящая Лицензия регулируется законодательством Российской Федерации без
+учёта коллизионных норм. Любой спор, возникающий из настоящей Лицензии или
+в связи с ней, подлежит исключительной юрисдикции судов Российской
+Федерации.
+
+10. КОНТАКТЫ
+
+Автор: dmistr
+Email: dmistr9999@gmail.com
+GitHub: https://github.com/dmistr/Remip
