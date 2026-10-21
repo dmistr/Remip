@@ -1,6 +1,5 @@
-[![License](https://img.shields.io/badge/license-MIT-red.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Proprietary%20Freeware-red.svg)](LICENSE.txt)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)]()
-[![Python](https://img.shields.io/badge/Python-3.14%2B-yellow.svg)]()
 [![PyQt](https://img.shields.io/badge/PyQt-6.0%2B-brightgreen.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-2%2F69-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/4ba0556fe18100f3959f0147e3145122331834f04024d36387a7597236bc9672)
@@ -618,16 +617,29 @@
 
 ### ЛИЦЕНЗИЯ И КОНТАКТЫ
 
-MIT License. По всем вопросам: **dmistr9999@gmail.com**
+**Proprietary Freeware** (проприетарная лицензия для личного использования).
+
+- ✅ **Личное некоммерческое использование** — свободно.
+- ❌ **Коммерческое использование** — только с письменного разрешения автора.
+- ❌ **Продажа, перекомпиляция, декомпиляция, модификация, раскрытие кода** — запрещены.
+- ⚠️ **Ответственность** — пользователь использует программу на свой страх и риск.
+  Автор не несёт ответственности за действия злоумышленников.
+
+> **О PyQt6:** приложение использует PyQt6, распространяемый под GNU GPL v3.0.
+> Проприетарная лицензия Remip применяется только к оригинальному коду автора.
+> Условия GPL-3.0, применимые к PyQt6, не отменяются настоящей лицензией.
+
+Полный текст: [LICENSE.txt](LICENSE.txt).
+
+По вопросам коммерческого лицензирования: **dmistr9999@gmail.com**
 
 ---
 
 <a name="english"></a>
 ## 🇬🇧 ENGLISH
 
-[![License](https://img.shields.io/badge/license-MIT-red.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Proprietary%20Freeware-red.svg)](LICENSE.txt)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)]()
-[![Python](https://img.shields.io/badge/Python-3.14%2B-yellow.svg)]()
 [![PyQt](https://img.shields.io/badge/PyQt-6.0%2B-brightgreen.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-2%2F69-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/4ba0556fe18100f3959f0147e3145122331834f04024d36387a7597236bc9672)
@@ -1232,4 +1244,18 @@ In the "About" window (`?` button), click **📤 Feedback**. Describe the issue,
 
 ### LICENSE & CONTACTS
 
-MIT License. For all questions: **dmistr9999@gmail.com**
+**Proprietary Freeware** (proprietary license for personal use).
+
+- ✅ **Personal non-commercial use** — free.
+- ❌ **Commercial use** — only with written permission from the author.
+- ❌ **Sale, recompilation, decompilation, modification, source disclosure** — prohibited.
+- ⚠️ **Liability** — the user uses the program at their own risk.
+  The author is not liable for the actions of malicious actors.
+
+> **About PyQt6:** this application uses PyQt6, distributed under GNU GPL v3.0.
+> The Remip proprietary license applies only to the author's original code.
+> The GPL-3.0 terms applicable to PyQt6 are not superseded by this license.
+
+Full text: [LICENSE.txt](LICENSE.txt).
+
+For commercial licensing inquiries: **dmistr9999@gmail.com**
