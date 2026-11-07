@@ -10,7 +10,7 @@
 </h1>
 
 <p align="center">
-  <b>Универсальный инструмент удалённого управления ПК</b><br>
+  <b>Протокол удалённого управления и взаимодействия</b><br>
   <i>Remote Management & Interaction Protocol</i>
 </p>
 
@@ -646,12 +646,12 @@
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
-  RemIP — Remote IP Control
+  RemIP — Remote Management & Interaction Protocol
 </h1>
 
 <p align="center">
-  <b>Universal remote PC management tool over IP</b><br>
-  <i>Универсальный инструмент удалённого управления ПК по IP</i>
+  <b>Remote Management & Interaction Protocol</b><br>
+  <i>Universal tool for remote PC management via IP</i>
 </p>
 
 <p align="center">
