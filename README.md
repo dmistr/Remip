@@ -6,12 +6,12 @@
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
-  REMIP — Remote Management & Interaction Protocol
+  REMIP
 </h1>
 
 <p align="center">
-  <b>Протокол удалённого управления и взаимодействия</b><br>
-  <i>Remote Management & Interaction Protocol</i>
+  <b>Удалённое управление компьютерами</b><br>
+  <i>Remote Environment Management & Interaction Platform</i>
 </p>
 
 <p align="center">
@@ -646,7 +646,7 @@
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
-  RemIP — Remote Management & Interaction Protocol
+  REMIP
 </h1>
 
 <p align="center">
