@@ -3,7 +3,7 @@
 [![PyQt](https://img.shields.io/badge/PyQt-6.0%2B-brightgreen.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-2%2F69-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/4ba0556fe18100f3959f0147e3145122331834f04024d36387a7597236bc9672)
-[![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7?style=for-the-badge)](https://donatr.ee/dmistr)
+[![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
