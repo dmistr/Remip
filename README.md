@@ -6,12 +6,12 @@
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
-  REMIP — Remote IP Control
+  REMIP — Remote Management & Interaction Protocol
 </h1>
 
 <p align="center">
-  <b>Универсальный инструмент удалённого управления ПК по IP</b><br>
-  <i>Universal remote PC management tool over IP</i>
+  <b>Универсальный инструмент удалённого управления ПК</b><br>
+  <i>Remote Management & Interaction Protocol</i>
 </p>
 
 <p align="center">
