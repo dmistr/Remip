@@ -604,7 +604,6 @@
 
 [![License](https://img.shields.io/badge/license-Proprietary%20Freeware-red.svg)](LICENSE.txt)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)]()
-[![PyQt](https://img.shields.io/badge/PyQt-6.0%2B-brightgreen.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-2%2F69-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/4ba0556fe18100f3959f0147e3145122331834f04024d36387a7597236bc9672)
 [![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
