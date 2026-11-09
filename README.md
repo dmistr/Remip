@@ -20,15 +20,7 @@
 
 ---
 
-<div align="center">
-
-[Русский](#русский) &nbsp;&nbsp;|&nbsp;&nbsp; [English](#english)
-
-</div>
-
----
-
-<a name="русский"></a>
+<a name="русский"></a> &nbsp;&nbsp;|&nbsp;&nbsp; [English](#english)
 ## 🇷🇺 РУССКИЙ
 
 ---
