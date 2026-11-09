@@ -21,7 +21,7 @@
 ---
 
 <a name="русский"></a>
-## 🇷🇺 РУССКИЙ  &nbsp;&nbsp;|&nbsp;&nbsp; №№ [English](#english)
+## 🇷🇺 РУССКИЙ  &nbsp;&nbsp;|&nbsp;&nbsp; [English](#english)
 
 ---
 
