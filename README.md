@@ -600,7 +600,7 @@
 ---
 
 <a name="english"></a>
-## 🇬🇧 ENGLISH
+## ENGLISH &nbsp;&nbsp;|&nbsp;&nbsp; [РУССКИЙ](#русский)
 
 [![License](https://img.shields.io/badge/license-Proprietary%20Freeware-red.svg)](LICENSE.txt)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)]()
