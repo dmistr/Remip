@@ -106,7 +106,7 @@
 | **PowerShell** | 5.1 | 5.1+ |
 | **.NET Framework** | 4.8 | 4.8+ |
 | **GPU (для стрима)** | DirectX 11 | NVIDIA GTX 10xx+ / AMD RX 5xx+ |
-| **Сеть** | 10 Мбит/с | 100 Мбит/с |
+| **Сеть** | 3 Мбит/с | 50 Мбит/с |
 
 ---
 
@@ -190,7 +190,7 @@
 
 **Пункты зелёного меню:**
 - **Удалить** — полная очистка: остановка процессов, удаление задачи планировщика, очистка папки агента, удаление правила брандмауэра.
-- **Тест агента** — 13-шаговая диагностика: ping → порт 8080 → проверка файла агента → права доступа → брандмауэр → лог-файл → автозагрузка → версия → сессия → Shell → Stream → Phantom. При отсутствии токена предлагает добавить его через диалог.
+- **Тест агента** — 13-шаговая диагностика: ping → порт 8080 → проверка файла агента → права доступа → брандмауэр → лог-файл → автозагрузка → версия → сессия и пр. При отсутствии токена предлагает добавить его через диалог.
 - **Логи** — получает файл лога с удалённого ПК через агента, при недоступности — через WinRM. Отображает в диалоговом окне.
 - **Обновить** — проверяет версию агента. Если устарела — переустанавливает. При выключенном WinRM включает его через самого агента.
 - **Перезагрузить** — останавливает процессы агента и запускает заново без переустановки файлов.
@@ -226,7 +226,7 @@
   - `Pause` — переключение Game Mode.
 - **Сворачивание (F1):** диалог скрывается, главное окно сворачивается. Стрим и управление продолжают работать. Клик по иконке Remip на панели задач восстанавливает сеанс.
 
-**Аппаратный H.264/H.265 стриминг:**
+**Аппаратный стриминг:**
 - **Захват:** DXGI Desktop Duplication, WGC (Windows Graphics Capture) или GDI.
 - **Кодирование:** аппаратное через Media Foundation (NVENC/QuickSync/AMF).
 - **Поддержка кодеков:**
@@ -252,7 +252,7 @@
 
 Полноценное управление мышью и клавиатурой удалённого ПК через собственный бинарный протокол. Не требует RDP, драйверов или виртуальных устройств.
 
-**Запуск:** кнопка «🎮 Управление» в просмотрщике скриншотов → запускает H.264/H.265 стрим + Phantom Input одновременно.
+**Запуск:** кнопка «🎮 Управление» в просмотрщике скриншотов → запускает стрим + Phantom Input одновременно.
 
 **Два режима:**
 - **🔵 Прямой (Direct):** полный захват мыши и клавиатуры. Курсор видим, все действия передаются на целевой ПК.
@@ -447,8 +447,8 @@
 | | Компенсация пинга | ⚫ Выкл / 🟢 Авто / 🔵 Макс | Автоподстройка под сетевую задержку |
 | **Общие** | Автодиагностика | Вкл/Выкл | Запуск проверки при входе в «Настройку ПК» |
 | | Автообновление | Вкл/Выкл | Проверка GitHub при запуске |
-| | Язык | Русский / English | Мгновенное применение |
-| | Тема | 🌙 Тёмная / ☀️ Светлая | Перезагрузка UI |
+| | Язык | Русский / English / Spanish | Мгновенное применение |
+| | Тема | 🌙 Тёмная / ☀️ Светлая / Другие | Перезагрузка UI |
 | **Скриншот** | Формат | PNG / JPEG | Без потерь или сжатие |
 | **Управление** | Режим фантома | 🔵 Прямой / 🟢 Скрытый | Режим Phantom Input по умолчанию |
 | | Чувствительность | 0.1-2.0 | Множитель мыши в Game Mode |
@@ -465,7 +465,7 @@
 
 ### ДОСТУП ЧЕРЕЗ ИНТЕРНЕТ (Pinggy/MQTT)
 
-**Новое:** Программа поддерживает подключение к агенту из любой точки мира через сервис Pinggy.
+Программа поддерживает подключение к агенту из любой точки мира через сервис Pinggy.
 - **Установка с токеном:** при установке агента можно указать токен Pinggy. Без него интернет-доступ будет недоступен.
 - **Поиск агента:** при подключении по Agent ID (`remip_...`) программа автоматически находит актуальный адрес туннеля.
 - **Безопасность:** аутентификация происходит по защищённому протоколу, который генерирует уникальный, постоянный токен для вашего ПК и агента. Это защищает от несанкционированного доступа.
@@ -547,6 +547,7 @@
 [![PyQt](https://img.shields.io/badge/PyQt-6.0%2B-brightgreen.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-2%2F69-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/4ba0556fe18100f3959f0147e3145122331834f04024d36387a7597236bc9672)
+[![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/dmistr/Remip/refs/heads/main/screenshots/logo_512x512.png" alt="RemIP Logo" width="64" align="center">
@@ -638,7 +639,7 @@
 | **PowerShell** | 5.1 | 5.1+ |
 | **.NET Framework** | 4.8 | 4.8+ |
 | **GPU (for streaming)** | DirectX 11 | NVIDIA GTX 10xx+ / AMD RX 5xx+ |
-| **Network** | 10 Mbps | 100 Mbps |
+| **Network** | 3 Mbps | 50 Mbps |
 
 ---
 
@@ -722,7 +723,7 @@ The central control element. The "AGENT" button shows state by color:
 
 **Green menu items:**
 - **Remove** — full cleanup: stop processes, remove scheduled task, delete agent folder, remove firewall rule.
-- **Test Agent** — 13-step diagnostics: ping → port 8080 → agent file check → permissions → firewall → log file → autostart → version → session → Shell → Stream → Phantom. If a token is missing, it offers to add it via a dialog.
+- **Test Agent** — 13-step diagnostics: ping → port 8080 → agent file check → permissions → firewall → log file → autostart → version → session and others. If a token is missing, it offers to add it via a dialog.
 - **Logs** — fetches the log file from the remote PC via the agent or WinRM. Displays in a dialog window.
 - **Update** — checks agent version. If outdated, reinstalls. If WinRM is disabled, enables it via the agent.
 - **Restart** — stops agent processes and restarts without reinstalling files.
@@ -758,7 +759,7 @@ The central control element. The "AGENT" button shows state by color:
   - `Pause` — toggle Game Mode.
 - **Minimize (F1):** dialog hides, main window minimizes. Stream and control continue working. Click the Remip icon on the taskbar to restore.
 
-**Hardware H.264/H.265 Streaming:**
+**Hardware Streaming:**
 - **Capture:** DXGI Desktop Duplication, WGC (Windows Graphics Capture), or GDI.
 - **Encoding:** hardware via Media Foundation (NVENC / QuickSync / AMF).
 - **Codec Support:**
@@ -784,7 +785,7 @@ Interactive terminal with streaming output. Launched via the "TERMINAL" button i
 
 Full mouse and keyboard control of the remote PC via a custom binary protocol. No RDP, drivers, or virtual devices required.
 
-**Launch:** "🎮 Control" button in screenshot viewer → starts H.264/H.265 stream + Phantom Input simultaneously.
+**Launch:** "🎮 Control" button in screenshot viewer → starts stream + Phantom Input simultaneously.
 
 **Two modes:**
 - **🔵 Direct:** full mouse and keyboard capture. Cursor is visible, all actions are transmitted to the target PC.
@@ -979,8 +980,8 @@ Opened via the ⚙️ button in the top panel.
 | | Ping compensation | ⚫ Off / 🟢 Auto / 🔵 Max | Auto-adjust for network latency |
 | **General** | Auto-diagnostic | On/Off | Run check on entering PC Setup mode |
 | | Auto-update | On/Off | Check GitHub on startup |
-| | Language | Russian / English | Instant apply |
-| | Theme | 🌙 Dark / ☀️ Light | UI reload |
+| | Language | Russian / English / Spanish | Instant apply |
+| | Theme | 🌙 Dark / ☀️ Light / Others | UI reload |
 | **Screenshot** | Format | PNG / JPEG | Lossless or compressed |
 | **Control** | Phantom mode | 🔵 Direct / 🟢 Hidden | Default Phantom Input mode |
 | | Sensitivity | 0.1-2.0 | Mouse multiplier in Game Mode |
