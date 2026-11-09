@@ -93,7 +93,6 @@
 | Компонент | Минимальные | Рекомендуемые |
 |-----------|------------|---------------|
 | **ОС** | Windows 10 | Windows 11 24H2 |
-| **Серверные ОС** | Windows Server 2019 | Windows Server 2022 |
 | **Права** | Администратор | Администратор |
 | **PowerShell** | 5.1 | 5.1+ |
 | **.NET Framework** | 4.8 | 4.8+ |
@@ -693,7 +692,6 @@
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
 | **OS** | Windows 10 | Windows 11 24H2 |
-| **Server OS** | Windows Server 2019 | Windows Server 2022 |
 | **Privileges** | Administrator | Administrator |
 | **PowerShell** | 5.1 | 5.1+ |
 | **.NET Framework** | 4.8 | 4.8+ |
