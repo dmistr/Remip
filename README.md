@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/license-Proprietary%20Freeware-red.svg)](LICENSE.txt)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
-[![VirusTotal](https://img.shields.io/badge/VirusTotal-2%1F67-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/c35443baa7138f914efc1b5a207534fc2991ff20a5fbf38a37be35d673e6abe0?nocache=1)
+[![VirusTotal](https://img.shields.io/badge/VirusTotal-1%2F67-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/c35443baa7138f914efc1b5a207534fc2991ff20a5fbf38a37be35d673e6abe0?nocache=1)
 [![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
 
 <h1 align="center">
