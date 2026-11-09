@@ -20,8 +20,8 @@
 
 ---
 
-<a name="русский"></a> &nbsp;&nbsp;|&nbsp;&nbsp; [English](#english)
-## 🇷🇺 РУССКИЙ
+<a name="русский"></a>
+## 🇷🇺 РУССКИЙ  &nbsp;&nbsp;|&nbsp;&nbsp; №№ [English](#english)
 
 ---
 
