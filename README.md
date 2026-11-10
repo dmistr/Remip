@@ -5,7 +5,7 @@
 [![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
 
 <h1 align="center">
-  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="200" align="center">
+  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center">
 </h1>
 
 <p align="center">
