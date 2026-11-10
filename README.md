@@ -4,13 +4,12 @@
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-1%2F67-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/c35443baa7138f914efc1b5a207534fc2991ff20a5fbf38a37be35d673e6abe0?nocache=1)
 [![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
 
-
+&nbsp;
 
 <h1 align="center">
-  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center">
+  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center"><br>&nbsp;
+<br>
 </h1>
-
-
 
 <p align="center">
   <b>Удалённое управление компьютерами</b><br>
@@ -25,8 +24,6 @@
 
 <a name="русский"></a>
 ## РУССКИЙ  &nbsp;&nbsp;|&nbsp;&nbsp; [ENGLISH](#english)
-
----
 
 ### 📋 ОГЛАВЛЕНИЕ
 
@@ -608,10 +605,13 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/dmistr/Remip/total.svg)](https://github.com/dmistr/Remip/releases)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-1%2F67-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/file/c35443baa7138f914efc1b5a207534fc2991ff20a5fbf38a37be35d673e6abe0?nocache=1)
-[![Поддержать Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
+[![Support Remip](https://img.shields.io/badge/Donate-donatr.ee-6C5CE7)](https://donatr.ee/dmistr)
+
+&nbsp;
 
 <h1 align="center">
-  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center">
+  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center"><br>&nbsp;
+<br>
 </h1>
 
 <p align="center">
