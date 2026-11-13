@@ -126,6 +126,12 @@
 - **🛠️ Настройка ПК** — подготовка текущего ПК к приёму команд.
 - **🌐 Карта сети** — сканирование локальной сети.
 
+<p align="left">
+  <a href="screenshots/2.0.0/Remip_261110013905.png">
+    <img src="screenshots/2.0.0/Remip_261110013905.png" alt="Главное меню Remip" width="700">
+  </a>
+</p>
+
 В верхней панели отображается ваш IP-адрес. Кнопки:
 - **?** — окно «О программе».
 - **⚙️** — настройки.
@@ -220,6 +226,12 @@
 - **Сохранить:** выбор пути и формата (PNG/JPEG), по умолчанию на рабочий стол.
 - **LIVE-режим:** переключатель запускает непрерывный стрим экрана.
 - **🎮 Управление:** запускает полноэкранный режим с Phantom Input.
+
+<p align="left">
+  <a href="screenshots/2.0.0/Remip_261110014043.png">
+    <img src="screenshots/2.0.0/Remip_261110014043.png" alt="Скриншоты. Стрим. Remip" width="700">
+  </a>
+</p>
 
 **Полноэкранный режим:**
 - Анимация разворачивания из текущего окна на весь экран.
@@ -336,6 +348,12 @@
 
 ### РЕЖИМ «НАСТРОЙКА ПК»
 
+<p align="left">
+  <a href="screenshots/2.0.0/Remip_261110014202.png">
+    <img src="screenshots/2.0.0/Remip_261110014202.png" alt="Настройка ПК. Remip" width="700">
+  </a>
+</p>
+
 Готовит текущий компьютер к приёму удалённых команд. Все изменения применяются локально.
 
 #### Экспресс-настройка
@@ -389,6 +407,12 @@
 ### РЕЖИМ «КАРТА СЕТИ»
 
 Сканирует локальную сеть и отображает все устройства.
+
+<p align="left">
+  <a href="screenshots/2.0.0/Remip_261110014119.png">
+    <img src="screenshots/2.0.0/Remip_261110014119.png" alt="Карта сети. Remip" width="700">
+  </a>
+</p>
 
 #### Сканирование
 
@@ -648,7 +672,11 @@
 2. [Quick Start](#quick-start)
 3. [System Requirements](#system-requirements)
 4. [Main Menu](#main-menu)
-5. [PC Control Mode](#pc-control-mode)
+5. <details>
+   <summary><b>PC Control Mode</b></summary>
+
+   [→ Go to section](#pc-control-mode)
+
    - [IP & Credentials](#ip--credentials)
    - [Power Management](#power-management)
    - [Remip Agent](#remip-agent)
@@ -658,23 +686,43 @@
    - [Context Assistant](#context-assistant)
    - [Messages](#messages)
    - [Tools](#tools)
-6. [PC Setup Mode](#pc-setup-mode)
+
+   </details>
+6. <details>
+   <summary><b>PC Setup Mode</b></summary>
+
+   [→ Go to section](#pc-setup-mode)
+
    - [Express Setup](#express-setup)
    - [Advanced Setup](#advanced-setup)
    - [Local Agent](#local-agent)
    - [Diagnostics & Service](#diagnostics--service)
-7. [Network Map Mode](#network-map-mode)
+
+   </details>
+7. <details>
+   <summary><b>Network Map Mode</b></summary>
+
+   [→ Go to section](#network-map-mode)
+
    - [Scanning](#scanning)
    - [Device Table](#device-table)
    - [Context Menu](#context-menu)
    - [Group Actions](#group-actions)
    - [Background Monitor](#background-monitor)
+
+   </details>
 8. [Settings Window](#settings-window)
 9. [Internet Access (Pinggy/MQTT)](#internet-access-pinggymqtt)
-10. [Smart Agent Platform](#smart-agent-platform)
+10. <details>
+    <summary><b>Smart Agent Platform</b></summary>
+
+    [→ Go to section](#smart-agent-platform)
+
     - [Architecture](#architecture)
     - [Autonomous Subsystems](#autonomous-subsystems)
     - [Watchdog & Self-Healing](#watchdog--self-healing)
+
+    </details>
 11. [Phantom Input — Protocol & Implementation](#phantom-input--protocol--implementation)
 12. [Auto-Update](#auto-update)
 13. [Feedback](#feedback)
