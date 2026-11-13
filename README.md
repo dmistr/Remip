@@ -128,7 +128,7 @@
 
 <p align="left">
   <a href="screenshots/2.0.0/Remip_261110013905.png">
-    <img src="screenshots/2.0.0/Remip_261110013905.png" alt="Главное меню Remip" width="700">
+    <img src="screenshots/2.0.0/Remip_261110013905.png" alt="Главное меню Remip" width="800">
   </a>
 </p>
 
@@ -229,7 +229,7 @@
 
 <p align="left">
   <a href="screenshots/2.0.0/Remip_261110014043.png">
-    <img src="screenshots/2.0.0/Remip_261110014043.png" alt="Скриншоты. Стрим. Remip" width="700">
+    <img src="screenshots/2.0.0/Remip_261110014043.png" alt="Скриншоты. Стрим. Remip" width="800">
   </a>
 </p>
 
@@ -350,7 +350,7 @@
 
 <p align="left">
   <a href="screenshots/2.0.0/Remip_261110014202.png">
-    <img src="screenshots/2.0.0/Remip_261110014202.png" alt="Настройка ПК. Remip" width="700">
+    <img src="screenshots/2.0.0/Remip_261110014202.png" alt="Настройка ПК. Remip" width="800">
   </a>
 </p>
 
@@ -410,7 +410,7 @@
 
 <p align="left">
   <a href="screenshots/2.0.0/Remip_261110014119.png">
-    <img src="screenshots/2.0.0/Remip_261110014119.png" alt="Карта сети. Remip" width="700">
+    <img src="screenshots/2.0.0/Remip_261110014119.png" alt="Карта сети. Remip" width="800">
   </a>
 </p>
 
