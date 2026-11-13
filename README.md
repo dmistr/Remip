@@ -25,7 +25,7 @@
 ---
 
 <a name="русский"></a>
-## РУССКИЙ  &nbsp;&nbsp;|&nbsp;&nbsp; [ENGLISH](#english)
+<h2 align="center">РУССКИЙ &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#english">ENGLISH</a></h2>
 
 ### 📋 ОГЛАВЛЕНИЕ
 
@@ -642,7 +642,7 @@
 ---
 
 <a name="english"></a>
-## ENGLISH &nbsp;&nbsp;|&nbsp;&nbsp; [РУССКИЙ](#русский)
+<h2 align="center">ENGLISH &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#русский">РУССКИЙ</a></h2>
 
 <p align="center">
   <a href="LICENSE.txt"><img src="https://img.shields.io/badge/license-Proprietary%20Freeware-red.svg" alt="License"></a>
