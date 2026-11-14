@@ -9,7 +9,7 @@
 &nbsp;
 
 <h1 align="center">
-  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center"><br>&nbsp;
+  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="Remip Logo" width="500" align="center"><br>&nbsp;
 <br>
 </h1>
 
@@ -40,7 +40,7 @@
 
    - [IP и учётные данные](#ip-и-учётные-данные)
    - [Управление питанием](#управление-питанием)
-   - [Агент Remip](#агент-remip)
+   - [Агент Remip](#агент-Remip)
    - [Скриншоты и стриминг](#скриншоты-и-стриминг)
    - [Терминал PowerShell](#терминал-powershell)
    - [Удалённое управление (Phantom Input)](#удалённое-управление-phantom-input)
@@ -93,7 +93,7 @@
 
 ### ОБЩЕЕ ОПИСАНИЕ
 
-**RemIP** — портативный инструмент для удалённого управления компьютерами в локальной сети и через интернет. Программа не требует установки — достаточно запустить EXE-файл от имени администратора. Весь функционал доступен «из коробки», без установки приложения, дополнительных библиотек, драйверов или виртуальных устройств.
+**Remip** — портативный инструмент для удалённого управления компьютерами в локальной сети и через интернет. Программа не требует установки — достаточно запустить EXE-файл от имени администратора. Весь функционал доступен «из коробки», без установки приложения, дополнительных библиотек, драйверов или виртуальных устройств.
 
 **Три режима работы:**
 - **Управление ПК** — удалённое управление компьютерами с настроенным WinRM или через интернет.
@@ -106,7 +106,7 @@
 
 ### БЫСТРЫЙ СТАРТ
 
-1.  **Запустите RemIP** от имени администратора.
+1.  **Запустите Remip** от имени администратора.
 2.  **Управляющий ПК:** перейдите в «Настройка ПК» → нажмите «Быстрая настройка».
 3.  **Целевой ПК:** повторите шаг 2 на удалённом компьютере.
 4.  **Сохраните учётные данные:** в «Управление ПК» введите IP, нажмите «ВВЕСТИ И СОХРАНИТЬ».
@@ -156,7 +156,7 @@
 
 #### IP и учётные данные
 
-**Поле ввода** — введите IPv4-адрес или Agent ID (`remip_...`) удалённого компьютера. Поле автоматически нормализует адрес.
+**Поле ввода** — введите IPv4-адрес или Agent ID (`Remip_...`) удалённого компьютера. Поле автоматически нормализует адрес.
 
 **Кнопка статуса** — проверяет доступность ПК и запускает проверку агента:
 - ▶ Серый — адрес введён, проверка не выполнялась.
@@ -507,7 +507,7 @@
 
 ### ДОСТУП ЧЕРЕЗ ИНТЕРНЕТ (Pinggy/MQTT)
 
-Программа поддерживает подключение к агенту из любой точки мира через сервис **Pinggy** — даже если целевой ПК находится за NAT, без «белого» IP-адреса и без настройки проброса портов на роутере. Агент сам создаёт защищённый туннель и публикует свой адрес, а клиент RemIP автоматически его находит.
+Программа поддерживает подключение к агенту из любой точки мира через сервис **Pinggy** — даже если целевой ПК находится за NAT, без «белого» IP-адреса и без настройки проброса портов на роутере. Агент сам создаёт защищённый туннель и публикует свой адрес, а клиент Remip автоматически его находит.
 
 #### 🔑 Как получить бесплатный токен Pinggy
 
@@ -520,10 +520,10 @@
 3. После входа откроется **Dashboard** (личный кабинет).
 4. Найдите блок с вашим **Access Token** (длинная строка из букв и цифр). Обычно он отображается прямо на главной странице кабинета.
 5. Нажмите **«Copy»** (или выделите токен и скопируйте вручную) — он понадобится на следующем шаге.
-6. Вернитесь в RemIP и вставьте токен в соответствующее поле.
+6. Вернитесь в Remip и вставьте токен в соответствующее поле.
 7. Нажмите **«Установить»** — агент сохранит токен и при запуске создаст туннель автоматически.
 
-> 💡 **Бесплатного токена достаточно** для повседневного использования. Единственное ограничение бесплатного тарифа — туннель периодически пересоздаётся (примерно раз в 45–60 минут). RemIP делает это автоматически и незаметно для вас: клиент в этот момент переподключается за 1–3 секунды, а на удалённом ПК ничего не прерывается.
+> 💡 **Бесплатного токена достаточно** для повседневного использования. Единственное ограничение бесплатного тарифа — туннель периодически пересоздаётся (примерно раз в 45–60 минут). Remip делает это автоматически и незаметно для вас: клиент в этот момент переподключается за 1–3 секунды, а на удалённом ПК ничего не прерывается.
 
 > При обновлении агента на новую версию существующий токен (если он был) подставится автоматически.
 
@@ -532,7 +532,7 @@
 #### 🌐 Как это работает
 
 - **Установка с токеном** — при установке агента вы указываете токен Pinggy. Без него интернет-доступ недоступен.
-- **Поиск агента** — при подключении по Agent ID (`remip_...`) программа автоматически находит актуальный адрес туннеля через защищённый MQTT-брокер. Вам не нужно вручную вводить IP-адрес или порт.
+- **Поиск агента** — при подключении по Agent ID (`Remip_...`) программа автоматически находит актуальный адрес туннеля через защищённый MQTT-брокер. Вам не нужно вручную вводить IP-адрес или порт.
 - **Уникальный Agent ID** — каждый агент получает постоянный идентификатор, привязанный к «железу» ПК. Даже после переустановки Windows, сброса профиля или переезда на другой IP агент сохраняет свой ID, и вы продолжаете подключаться к нему как раньше.
 - **Стабильность** — программа использует мультиплексирование каналов: управление, видео, аудио, фантомный ввод и терминал передаются через один туннель параллельно, не мешая друг другу.
 
@@ -557,7 +557,7 @@
 
 **5. Сверка кода подтверждения при первом подключении** — см. следующий раздел.
 
-> ⚠️ **Что НЕ защищено:** сам публичный сервис Pinggy технически видит объём передаваемого трафика (но не его содержимое — оно зашифровано). Если для вас критична полная приватность даже на уровне метаданных, используйте RemIP в локальной сети либо разверните собственный туннель.
+> ⚠️ **Что НЕ защищено:** сам публичный сервис Pinggy технически видит объём передаваемого трафика (но не его содержимое — оно зашифровано). Если для вас критична полная приватность даже на уровне метаданных, используйте Remip в локальной сети либо разверните собственный туннель.
 
 #### 🛡️ Первая авторизация
 
@@ -567,11 +567,11 @@
 
 1. **Ваш ПК** отправляет запрос на подключение к агенту.
 2. **Агент** генерирует случайный **код подтверждения** (например, `A1B2-C3D4`) и показывает его на **своём экране** во всплывающем диалоговом окне: *«Запрос на подключение от администратора. Код: A1B2-C3D4. Разрешить постоянный доступ?»*
-3. **В RemIP** на вашей стороне появляется точно такой же код в окне ожидания.
-4. **Вы глазами сверяете** оба кода: тот, что показан на экране удалённого ПК (его видит пользователь за тем компьютером), и тот, что показывает RemIP у вас.
+3. **В Remip** на вашей стороне появляется точно такой же код в окне ожидания.
+4. **Вы глазами сверяете** оба кода: тот, что показан на экране удалённого ПК (его видит пользователь за тем компьютером), и тот, что показывает Remip у вас.
 5. Если коды **совпадают** — значит, канал не перехвачен, и подключение безопасно. Пользователь на удалённом ПК нажимает **«Разрешить»** (или вы сами, если у вас есть физический доступ к тому ПК).
 6. После подтверждения агент и ваш ПК **вырабатывают общий секрет** (ECDH — обмен ключами по эллиптическим кривым). На основе этого секрета вычисляется **постоянный токен**, уникальный для пары «ваш ПК ↔ этот агент».
-7. Этот токен сохраняется на удалённом ПК и в RemIP. Все последующие подключения проходят автоматически, без диалогов и ввода кодов.
+7. Этот токен сохраняется на удалённом ПК и в Remip. Все последующие подключения проходят автоматически, без диалогов и ввода кодов.
 
 > 💡 **Что даёт эта процедура:** даже если злоумышленник знает ваш Agent ID и перехватил MQTT-публикацию с адресом туннеля, он не сможет подключиться — у него нет вашего токена. А вы, один раз подтвердив подключение, больше никогда не увидите это окно.
 
@@ -579,7 +579,7 @@
 
 > ⚠️ **Если коды не совпадают** — ни в коем случае не подтверждайте подключение. Это может означать попытку MITM-атаки. Закройте диалог, проверьте сеть и повторите попытку.
 
-**Сколько раз это происходит:** ровно один раз на каждую пару «ваш ПК ↔ новый агент». Если вы переустановите RemIP на новом ПК или почистите сохранённые учётные данные — процедура повторится. Удаление и повторная установка агента при этом **не сбрасывают** доверие, если вы используете тот же Agent ID и тот же ПК.
+**Сколько раз это происходит:** ровно один раз на каждую пару «ваш ПК ↔ новый агент». Если вы переустановите Remip на новом ПК или почистите сохранённые учётные данные — процедура повторится. Удаление и повторная установка агента при этом **не сбрасывают** доверие, если вы используете тот же Agent ID и тот же ПК.
 
 ---
 
@@ -663,7 +663,7 @@
 &nbsp;
 
 <h1 align="center">
-  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="RemIP Logo" width="500" align="center"><br>&nbsp;
+  <img src="https://github.com/dmistr/Remip/blob/main/screenshots/logo.png" alt="Remip Logo" width="500" align="center"><br>&nbsp;
 <br>
 </h1>
 
@@ -691,7 +691,7 @@
 
    - [IP & Credentials](#ip--credentials)
    - [Power Management](#power-management)
-   - [Remip Agent](#remip-agent)
+   - [Remip Agent](#Remip-agent)
    - [Screenshots & Streaming](#screenshots--streaming)
    - [PowerShell Terminal](#powershell-terminal)
    - [Remote Control (Phantom Input)](#remote-control-phantom-input)
@@ -744,7 +744,7 @@
 
 ### OVERVIEW
 
-**RemIP** is a portable tool for remote computer management in local networks and over the internet. No installation required — just run the EXE as Administrator. All functionality works out of the box without additional libraries, drivers, or virtual devices.
+**Remip** is a portable tool for remote computer management in local networks and over the internet. No installation required — just run the EXE as Administrator. All functionality works out of the box without additional libraries, drivers, or virtual devices.
 
 **Three operating modes:**
 - **PC Control** — remote management of computers with WinRM or over the internet.
@@ -757,7 +757,7 @@
 
 ### QUICK START
 
-1.  **Run RemIP** as Administrator.
+1.  **Run Remip** as Administrator.
 2.  **Controlling PC:** go to "PC Setup" → click "Fast Setup".
 3.  **Target PC:** repeat step 2 on the remote computer.
 4.  **Save credentials:** in "PC Control" enter the IP, click "SAVE CREDENTIALS".
@@ -801,7 +801,7 @@ Language and theme can be changed in Settings (gear icon) and are applied instan
 
 #### IP & Credentials
 
-**Input Field** — enter the remote computer's IPv4 address or Agent ID (`remip_...`). The field automatically normalizes the input.
+**Input Field** — enter the remote computer's IPv4 address or Agent ID (`Remip_...`). The field automatically normalizes the input.
 
 **Status Button** — checks PC availability and starts agent check:
 - ▶ Gray — address entered, check not performed.
@@ -1134,7 +1134,7 @@ Opened via the ⚙️ button in the top panel.
 
 ### INTERNET ACCESS (Pinggy/MQTT)
 
-The program supports connecting to the agent from anywhere in the world via the **Pinggy** service — even if the target PC is behind NAT, without a public IP address, and without configuring port forwarding on the router. The agent creates a secure tunnel and publishes its address, and the RemIP client automatically discovers it.
+The program supports connecting to the agent from anywhere in the world via the **Pinggy** service — even if the target PC is behind NAT, without a public IP address, and without configuring port forwarding on the router. The agent creates a secure tunnel and publishes its address, and the Remip client automatically discovers it.
 
 #### 🔑 How to get a free Pinggy token
 
@@ -1147,10 +1147,10 @@ A token is required for internet access: **without it, no tunnel is created, and
 3. After signing in, the **Dashboard** (personal account) opens.
 4. Locate the block with your **Access Token** (a long string of letters and digits). It's usually shown right on the main dashboard page.
 5. Click **"Copy"** (or select the token and copy it manually) — you'll need it in the next step.
-6. Return to RemIP and paste the token into the corresponding field.
+6. Return to Remip and paste the token into the corresponding field.
 7. Click **"Install"** — the agent saves the token and creates the tunnel automatically on startup.
 
-> 💡 **A free token is sufficient** for everyday use. The only limitation of the free tier is that the tunnel is periodically recreated (roughly every 45–60 minutes). RemIP does this automatically and invisibly to you: the client reconnects in 1–3 seconds, and nothing is interrupted on the remote PC.
+> 💡 **A free token is sufficient** for everyday use. The only limitation of the free tier is that the tunnel is periodically recreated (roughly every 45–60 minutes). Remip does this automatically and invisibly to you: the client reconnects in 1–3 seconds, and nothing is interrupted on the remote PC.
 
 > When updating the agent to a new version, the existing token (if any) is pre-filled automatically.
 
@@ -1159,7 +1159,7 @@ A token is required for internet access: **without it, no tunnel is created, and
 #### 🌐 How it works
 
 - **Installation with a token** — you specify the Pinggy token when installing the agent. Without it, internet access is unavailable.
-- **Agent discovery** — when connecting via Agent ID (`remip_...`), the program automatically discovers the current tunnel address through a secure MQTT broker. No manual entry of IP or port is required.
+- **Agent discovery** — when connecting via Agent ID (`Remip_...`), the program automatically discovers the current tunnel address through a secure MQTT broker. No manual entry of IP or port is required.
 - **Permanent Agent ID** — each agent receives a persistent identifier tied to the PC's hardware. Even after reinstalling Windows, resetting the profile, or moving to a different IP, the agent keeps its ID, and you continue connecting to it as before.
 - **Stability** — the program uses channel multiplexing: control, video, audio, phantom input, and terminal are transmitted over a single tunnel in parallel without interfering with each other.
 
@@ -1184,7 +1184,7 @@ The remote PC enforces a limit: no more than **3 connection attempts per minute*
 
 **5. Verification code matching on first connection** — see the next section.
 
-> ⚠️ **What is NOT protected:** the Pinggy service itself technically sees the volume of transmitted traffic (but not its contents — it is encrypted). If you require full privacy even at the metadata level, use RemIP on a local network or deploy your own tunnel.
+> ⚠️ **What is NOT protected:** the Pinggy service itself technically sees the volume of transmitted traffic (but not its contents — it is encrypted). If you require full privacy even at the metadata level, use Remip on a local network or deploy your own tunnel.
 
 #### 🛡️ First-time authorization
 
@@ -1194,11 +1194,11 @@ Here's what it looks like:
 
 1. **Your PC** sends a connection request to the agent.
 2. **The agent** generates a random **verification code** (for example, `A1B2-C3D4`) and displays it on **its own screen** in a pop-up dialog: *"Connection request from administrator. Code: A1B2-C3D4. Grant permanent access?"*
-3. **In RemIP** on your side, the exact same code appears in the waiting window.
-4. **You visually compare** the two codes: the one shown on the remote PC's screen (seen by the user at that computer) and the one shown by RemIP on yours.
+3. **In Remip** on your side, the exact same code appears in the waiting window.
+4. **You visually compare** the two codes: the one shown on the remote PC's screen (seen by the user at that computer) and the one shown by Remip on yours.
 5. If the codes **match**, the channel is not intercepted, and the connection is secure. The user on the remote PC clicks **"Allow"** (or you do, if you have physical access to that PC).
 6. After confirmation, the agent and your PC **derive a shared secret** (ECDH — Elliptic Curve Diffie-Hellman key exchange). Based on this secret, a **permanent token** is computed, unique to the pair "your PC ↔ this agent".
-7. This token is saved on the remote PC and in RemIP. All subsequent connections happen automatically, without dialogs or code entry.
+7. This token is saved on the remote PC and in Remip. All subsequent connections happen automatically, without dialogs or code entry.
 
 > 💡 **What this procedure gives you:** even if an attacker knows your Agent ID and has intercepted the MQTT publication with the tunnel address, they cannot connect — they don't have your token. And once you've confirmed the connection, you'll never see this dialog again.
 
@@ -1206,7 +1206,7 @@ Here's what it looks like:
 
 > ⚠️ **If the codes do not match** — never confirm the connection. This may indicate a MITM attack attempt. Close the dialog, check your network, and try again.
 
-**How often this happens:** exactly once per pair "your PC ↔ new agent". If you reinstall RemIP on a new PC or clear saved credentials, the procedure repeats. Uninstalling and reinstalling the agent does **not** reset the trust if you use the same Agent ID and the same PC.
+**How often this happens:** exactly once per pair "your PC ↔ new agent". If you reinstall Remip on a new PC or clear saved credentials, the procedure repeats. Uninstalling and reinstalling the agent does **not** reset the trust if you use the same Agent ID and the same PC.
 
 ---
 
