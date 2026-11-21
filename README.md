@@ -42,6 +42,7 @@
    - [Управление питанием](#управление-питанием)
    - [Агент Remip](#агент-Remip)
    - [Скриншоты и стриминг](#скриншоты-и-стриминг)
+   - [Передача файлов](#передача-файлов)
    - [Терминал PowerShell](#терминал-powershell)
    - [Удалённое управление (Phantom Input)](#удалённое-управление-phantom-input)
    - [Контекстный помощник](#контекстный-помощник)
@@ -100,7 +101,7 @@
 - **Настройка ПК** — подготовка текущего компьютера к приёму удалённых команд.
 - **Карта сети** — сканирование локальной сети с групповыми действиями.
 
-**Платформа Умного Агента** — легковесный PowerShell-сервер, доставляемый на удалённый ПК в один клик. Обеспечивает скриншоты, стриминг экрана (H.264/H.265), терминал, удалённое управление, заморозку процессов и многое другое. Включает в себя сторожевой механизм (Watchdog) для автоматического восстановления после сбоев.
+**Платформа Умного Агента** — легковесный PowerShell-сервер, доставляемый на удалённый ПК в один клик. Обеспечивает скриншоты, стриминг экрана (H.264/H.265), терминал, удалённое управление, двустороннюю передачу файлов, заморозку процессов и многое другое. Включает в себя сторожевой механизм (Watchdog) для автоматического восстановления после сбоев.
 
 ---
 
@@ -236,6 +237,7 @@
 - **Сохранить:** выбор пути и формата (PNG/JPEG), по умолчанию на рабочий стол.
 - **LIVE-режим:** переключатель запускает непрерывный стрим экрана.
 - **🎮 Управление:** запускает полноэкранный режим с Phantom Input.
+- **Drag & Drop:** перетащите файлы в окно скриншота — отправка на удалённый ПК ([подробнее](#передача-файлов)).
 
 <p align="left">
   <a href="screenshots/2.0.0/Remip_261110014043.png">
@@ -264,6 +266,23 @@
     - **H.265 (HEVC):** Меньше трафика при том же качестве. Требует поддержки GPU. **Новое:** в настройках можно выбрать `H.264`, `H.265` или `Auto` (попытка H.265 с автоматическим откатом на H.264 при неудаче).
 - **Автоматический fallback:** при невозможности H.264/H.265 стрима автоматически переключается на GDI-захват.
 - **Система «Светофор»** — адаптивное управление качеством и FPS в реальном времени (🟢 — повышение, 🟡 — стабилизация, 🔴 — снижение).
+
+#### Передача файлов
+
+Передача файлов между вашим и удалённым ПК в обе стороны — без мессенджеров, облаков и ручной загрузки. Работает через буфер обмена в режиме управления или перетаскиванием на окно скриншота.
+
+**Как передавать:**
+- **С удалённого ПК:** скопируйте файл на удалённой машине — на вашем ПК он уже «в буфере». Откройте любую папку и нажмите `Ctrl+V`: файл скачается прямо в неё.
+- **На удалённый ПК:** скопируйте файлы локально (`Ctrl+C`), затем нажмите `Ctrl+V` или выберите «Вставить» на экране удалённого ПК — система сама определит папку назначения.
+- **На удалённый ПК (Drag & Drop):** перетащите файлы или целые папки из Проводника прямо в окно скриншота Remip — они отправятся на Рабочий стол удалённого ПК (даже если он перенаправлен в OneDrive). Полноэкранный режим не нужен: работает и на статичном снимке, и в оконном LIVE.
+
+**Особенности:**
+- **Стрим не прерывается.** Передача идёт поверх видео в полном качестве, скорость адаптируется под загрузку сети, чтобы не ронять FPS и отклик мыши. Окно скриншота можно закрыть — копирование продолжится в фоне.
+- **Управление не блокируется.** Мышь, клики, сворачивание (`F1`) и выход (`F12`) работают во время копирования; повторный `Ctrl+V` игнорируется как защита от двойной вставки.
+- **Буфер обмена целевого ПК не затирается** при отправке перетаскиванием.
+- **Прогресс всегда виден.** Панель с процентами, скоростью и оставшимся временем висит поверх окон, не отбирает фокус и перетаскивается мышью; кнопка «Отмена» останавливает передачу в любой момент. По завершении в журнал пишется подтверждение с количеством файлов, объёмом и папкой назначения.
+- **Файлы не повреждаются и не затираются.** Приём идёт через временный файл — файл появляется на месте только после полной записи. Совпадающее имя получает суффикс `(1)`, недописанные остатки при отмене или обрыве удаляются автоматически.
+- **Безопасность.** Канал передачи аутентифицируется тем же защищённым соединением, что и вся сессия. В интернет-режиме действует лимит 50 МБ на операцию с понятным предупреждением; оконный LIVE на время дроп-отправки приостанавливается, чтобы не перегружать туннель.
 
 #### Терминал PowerShell
 
@@ -693,6 +712,7 @@
    - [Power Management](#power-management)
    - [Remip Agent](#Remip-agent)
    - [Screenshots & Streaming](#screenshots--streaming)
+   - [File Transfer](#file-transfer)
    - [PowerShell Terminal](#powershell-terminal)
    - [Remote Control (Phantom Input)](#remote-control-phantom-input)
    - [Context Assistant](#context-assistant)
@@ -751,7 +771,7 @@
 - **PC Setup** — prepare the current computer for receiving remote commands.
 - **Network Map** — scan the local network with group actions.
 
-**Smart Agent Platform** — a lightweight server delivered to a remote PC in one click. Provides screenshots, screen streaming (H.264/H.265), terminal, remote control, process freezing, and more. Includes a Watchdog for automatic recovery from failures.
+**Smart Agent Platform** — a lightweight server delivered to a remote PC in one click. Provides screenshots, screen streaming (H.264/H.265), terminal, remote control, two-way file transfer, process freezing, and more. Includes a Watchdog for automatic recovery from failures.
 
 ---
 
@@ -881,6 +901,7 @@ The central control element. The "AGENT" button shows state by color:
 - **Save:** choose path and format (PNG/JPEG), defaults to Desktop.
 - **LIVE Mode:** toggle starts continuous screen streaming.
 - **🎮 Control:** launches fullscreen mode with Phantom Input.
+- **Drag & Drop:** drag files onto the screenshot window to send them to the remote PC ([details](#file-transfer)).
 
 **Fullscreen Mode:**
 - Expand animation from current window to full screen.
@@ -903,6 +924,23 @@ The central control element. The "AGENT" button shows state by color:
     - **H.265 (HEVC):** Less traffic for the same quality. Requires GPU support. **New:** you can choose `H.264`, `H.265`, or `Auto` (attempt H.265 with automatic fallback to H.264 on failure) in the settings.
 - **Automatic Fallback:** if H.264/H.265 streaming is impossible, it automatically switches to GDI capture.
 - **"Traffic Light" System** — adaptive quality and FPS control in real time (🟢 — increase, 🟡 — stabilize, 🔴 — decrease).
+
+#### File Transfer
+
+Transfer files between your PC and the remote machine in both directions — no messengers, no cloud storage, no manual uploads. Works via the clipboard in remote-control mode or by dragging files onto the screenshot window.
+
+**How to transfer:**
+- **From the remote PC:** copy a file on the remote machine — on your local PC it is already "in the clipboard". Open any folder and press `Ctrl+V`: the file downloads right into it.
+- **To the remote PC:** copy files locally (`Ctrl+C`), then press `Ctrl+V` or choose "Paste" on the remote screen — the system detects the destination folder automatically.
+- **To the remote PC (Drag & Drop):** drag files or entire folders from File Explorer onto the Remip screenshot window — they will be sent to the remote desktop (even if the Desktop folder is redirected to OneDrive). Full-screen mode is not required: it works both on a static snapshot and in windowed LIVE.
+
+**Key properties:**
+- **The stream is never interrupted.** The transfer runs on top of the video at full quality; the speed adapts to network load so that FPS and mouse responsiveness are preserved. You can close the screenshot window — copying continues in the background.
+- **Control is not blocked.** Mouse movement, clicks, minimizing the session (`F1`) and exiting (`F12`) all work during a transfer; a second `Ctrl+V` is ignored as a protection against double pasting.
+- **The target PC's clipboard is not overwritten** when sending via drag & drop.
+- **Progress is always visible.** A panel with percentage, speed and remaining time stays on top, does not steal focus and can be dragged anywhere; the "Cancel" button stops the transfer at any moment. On completion, the log records a confirmation with the file count, total size and destination folder.
+- **Files are never corrupted or overwritten.** Incoming data is written to a temporary file — the final file appears in place only after the write completes. If a file with the same name already exists, the new one gets a `(1)` suffix; incomplete leftovers are cleaned up automatically on cancel or disconnect.
+- **Security.** The transfer channel is authenticated through the same secure connection as the whole session. In internet mode there is a 50 MB per-operation limit with a clear warning; windowed LIVE is paused during a drop-send to avoid overloading the tunnel.
 
 #### PowerShell Terminal
 
